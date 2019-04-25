@@ -1,6 +1,6 @@
 package com.somenewsapp.network
 
-import com.somenewsapp.data.HeadlineResponse
+import com.somenewsapp.data.model.HeadlineResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 

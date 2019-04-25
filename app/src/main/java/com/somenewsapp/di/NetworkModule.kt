@@ -2,6 +2,8 @@ package com.somenewsapp.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.somenewsapp.data.source.remote.HeadlineRepository
+import com.somenewsapp.data.source.remote.HeadlineRepositoryImpl
 import com.somenewsapp.network.NewsApiService
 import com.somenewsapp.network.interceptors.ApiKeyInterceptor
 import dagger.Module
@@ -54,5 +56,11 @@ class NetworkModule {
     @Provides
     fun providesNewsApiService(retrofit: Retrofit): NewsApiService{
         return retrofit.create(NewsApiService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesHeadlineRepository(repoImpl: HeadlineRepositoryImpl): HeadlineRepository{
+        return repoImpl
     }
 }
