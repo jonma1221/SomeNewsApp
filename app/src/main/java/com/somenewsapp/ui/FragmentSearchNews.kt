@@ -34,6 +34,7 @@ class FragmentSearchNews: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         SomeNewsApplication.getNewsApplication().component.inject(this)
 
+        //todo - remove this
         newsService.getTopHeadLines()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
